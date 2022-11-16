@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+            <ImageView
+                android:id="@+id/lostImage"
+                android:layout_width="395dp"
+                android:layout_height="216dp"
+                app:srcCompat="@drawable/ic_cat1"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lostTitle"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="150dp"
+            android:text="Потерялся кот неизвестной породы, на вид полосатый и довольно глупый, просьба верну..."
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#FEFEFE"
+            android:textSize="16dp"
+            android:shadowColor="@color/black"/>
+        <TextView
+            android:id="@+id/lostAddress"
+            android:layout_width="328dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="190dp"
+            android:text="Екатеринбург, ул.Луначарского 51"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:shadowColor="@color/black"/>
+        <ImageView
+            android:id="@+id/imageMap"
+            android:layout_width="17dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="190dp"
+            app:srcCompat="@drawable/icons8_filter_90_1"
+            />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
