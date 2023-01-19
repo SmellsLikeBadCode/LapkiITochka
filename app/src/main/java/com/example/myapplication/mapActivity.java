@@ -20,9 +20,11 @@ public class mapActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String MAPKIT_API_KEY = "9578bcc9-08b2-4d0e-855e-44201665bd92";
+        MapKitFactory.setApiKey(MAPKIT_API_KEY);
         MapKitFactory.initialize(this);
         setContentView(R.layout.activity_map);
-        mapview = (MapView) findViewById(R.id.mapview);
+        mapview = findViewById(R.id.mapview);
         mapview.getMap().move(
                 new CameraPosition(new Point(55.751574, 37.573856), 11.0f, 0.0f, 0.0f),
                 new Animation(Animation.Type.SMOOTH, 0),
@@ -46,10 +48,18 @@ public class mapActivity extends AppCompatActivity {
     public void ClickPets(View view) {
         Intent intent = new Intent(mapActivity.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void ClickLost(View view) {
         Intent intent = new Intent(mapActivity.this, lostActivity.class);
         startActivity(intent);
+        finish();
+    }
+
+    public void ClickProfile(View view) {
+        Intent intent = new Intent(mapActivity.this, profileActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         List<Post> postList = new ArrayList<>();
-        postList.add(new Post('1', "cat1", "Кеша, вредный и наглый", "Екатеринбург, ул. Коминтерна", "В добрые руки"));
-        postList.add(new Post('2', "cat2", "Гоша, ласковый и милый", "Москва, ул. Первомайская", "В добрые руки"));
-        postList.add(new Post('3', "cat3", "Изя, интересный и красивый", "Челябинск, ул. Ленина", "5000 рублей"));
-        postList.add(new Post('4', "cat4", "Вова, хороший и пушистый", "Санкт-Петербург, ул. Сталина", "10000 рублей"));
+        postList.add(new Post('1', "cat1", "Кеша, вредный и наглый", "Екатеринбург, ул. Коминтерна", "В добрые руки", "text", "number", "breed", "gender", "date", "dateL"));
+        postList.add(new Post('2', "cat2", "Гоша, ласковый и милый", "Москва, ул. Первомайская", "В добрые руки", "text", "number", "breed", "gender", "date", "dateL"));
+        postList.add(new Post('3', "cat3", "Изя, интересный и красивый", "Челябинск, ул. Ленина", "5000 рублей", "text", "number", "breed", "gender", "date", "dateL"));
+        postList.add(new Post('4', "cat4", "Вова, хороший и пушистый", "Санкт-Петербург, ул. Сталина", "10000 рублей", "text", "number", "breed", "gender", "date", "dateL"));
         setPostRecycler(postList);
     }
 
@@ -46,10 +46,18 @@ public class MainActivity extends AppCompatActivity {
     public void ClickLost(View view) {
         Intent intent = new Intent(MainActivity.this, lostActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void ClickMap(View view) {
         Intent intent = new Intent(MainActivity.this, mapActivity.class);
         startActivity(intent);
+        finish();
+    }
+
+    public void ClickProfile(View view) {
+        Intent intent = new Intent(MainActivity.this, profileActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

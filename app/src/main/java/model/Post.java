@@ -3,14 +3,20 @@ package model;
 public class Post {
 
     int id;
-    String img, title, address, price;
+    String img, title, address, price, text, number, breed, gender, date, dateL;
 
-    public Post(int id, String img, String title, String address, String price) {
+    public Post(int id, String img, String title, String address, String price, String text, String number, String breed, String gender, String date, String dateL) {
         this.id = id;
         this.img = img;
         this.title = title;
         this.address = address;
         this.price = price;
+        this.text = text;
+        this.number = number;
+        this.breed = breed;
+        this.gender = gender;
+        this.date = date;
+        this.dateL = dateL;
     }
 
     public int getId() {
@@ -51,5 +57,53 @@ public class Post {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getDateL() {
+        return dateL;
+    }
+
+    public void setDateL(String dateL) {
+        this.dateL = dateL;
     }
 }

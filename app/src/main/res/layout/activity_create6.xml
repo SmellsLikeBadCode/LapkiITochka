@@ -4,78 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F4F4"
-    tools:context=".MainActivity"
-    tools:visibility="visible">
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/postRecycler"
-        android:layout_width="412dp"
-        android:layout_height="514dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="40dp"
-        android:onClick="onClick"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton6"
-        app:layout_constraintVertical_bias="0.377" />
+    android:background="#F4F4F4">
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="130dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="32dp"
-        android:text="Питомцы"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/textView55"
+        android:layout_width="341dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:textSize="16dp"
+        android:text="Мы уверены, что совсем скоро хозяин найдется"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView54" />
+
+    <TextView
+        android:id="@+id/textView53"
+        android:layout_width="341dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:text="Ваше объявление было опубликовано. Вы можете просмотреть его, чтобы проверить правильность введеных данных."
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="341dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:textSize="16dp"
+        android:text="Также не забудьте проверить объявления других пользователей - вполне возможно хозяин уже выложил объявление о поиске питомца."
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView53" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:text="Нашел питомца"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="52dp"
+        android:text="Открыть объявление"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/imageView8"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_cat_footprint" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton6"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_search" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton7"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_funnel" />
-
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_slider" />
+        app:srcCompat="@drawable/ic_create6" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -95,24 +96,25 @@
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
             android:contentDescription="petsButton"
+            android:onClick="ClickPets"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_cat_footprint" />
 
         <ImageButton
             android:id="@+id/lostButton"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
-            android:onClick="ClickLost"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/petsButton"
-            app:srcCompat="@drawable/ic_lostfoot"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            app:srcCompat="@drawable/ic_lostfoot" />
 
         <ImageButton
             android:id="@+id/mapButton"
+            tools:ignore="SpeakableTextPresentCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
@@ -120,11 +122,11 @@
             android:onClick="ClickMap"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/profileButton"
-            app:srcCompat="@drawable/ic_map"
-            tools:ignore="SpeakableTextPresentCheck" />
+            app:srcCompat="@drawable/ic_map" />
 
         <ImageButton
             android:id="@+id/profileButton"
+            tools:ignore="SpeakableTextPresentCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
@@ -132,8 +134,7 @@
             android:onClick="ClickProfile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_profile"
-            tools:ignore="SpeakableTextPresentCheck" />
+            app:srcCompat="@drawable/ic_profile" />
 
         <TextView
             android:id="@+id/textView"
@@ -144,7 +145,7 @@
             android:fontFamily="@font/noto_sans"
             android:text="Питомцы"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:textColor="#584CF3"
+            android:textColor="#818181"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -175,8 +176,8 @@
             android:layout_marginEnd="43dp"
             android:layout_marginBottom="20dp"
             android:text="Профиль"
+            android:textColor="#584CF3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.postActivity;
 
 import java.util.List;
 import model.Post;
@@ -40,7 +42,21 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.textTitle.setText(posts.get(position).getTitle());
         holder.textAddress.setText(posts.get(position).getAddress());
 
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, postActivity.class);
+                intent.putExtra("postImage", imageId);
+                intent.putExtra("postTitle", posts.get(position).getTitle());
+                intent.putExtra("postText", posts.get(position).getText());
+                intent.putExtra("postNumber", posts.get(position).getNumber());
+                intent.putExtra("postBreed", posts.get(position).getBreed());
+                intent.putExtra("postGender", posts.get(position).getGender());
+                intent.putExtra("postDate", posts.get(position).getDate());
+                intent.putExtra("postDateL", posts.get(position).getDateL());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
