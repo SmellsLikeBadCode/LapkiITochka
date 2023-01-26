@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="434dp"
-        android:layout_height="111dp"
+        android:layout_height="90dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,46 +23,54 @@
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:contentDescription="petsButton"
             android:onClick="ClickPets"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_cat_footprint" />
 
         <ImageButton
             android:id="@+id/lostButton"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:onClick="ClickLost"
             app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintStart_toEndOf="@+id/petsButton"
-            app:srcCompat="@drawable/ic_lostfoot" />
+            app:srcCompat="@drawable/ic_lostfoot"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <ImageButton
             android:id="@+id/mapButton"
-            tools:ignore="SpeakableTextPresentCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:onClick="ClickMap"
             app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintEnd_toStartOf="@+id/profileButton"
-            app:srcCompat="@drawable/ic_map" />
+            app:srcCompat="@drawable/ic_map"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/profileButton"
-            tools:ignore="SpeakableTextPresentCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_profile" />
+            app:srcCompat="@drawable/ic_profile"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView"
@@ -102,8 +110,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="43dp"
             android:layout_marginBottom="20dp"
-            android:textColor="#584CF3"
             android:text="Профиль"
+            android:textColor="#584CF3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -145,8 +153,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="250dp"
-        android:layout_height="80dp"
+        android:layout_width="278dp"
+        android:layout_height="96dp"
         android:layout_marginTop="28dp"
         app:cardCornerRadius="11dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -156,20 +164,21 @@
 
         <ImageButton
             android:id="@+id/imageButton2"
-            android:layout_width="43dp"
-            android:layout_height="37dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="30dp"
             android:onClick="ClickSettings"
-            tools:srcCompat="@drawable/ic_settings" />
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_settings" />
 
         <TextView
             android:id="@+id/textView22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="22dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="70dp"
             android:layout_marginBottom="5dp"
             android:text="Настройки"
             android:textColor="@color/black"
@@ -177,20 +186,22 @@
 
         <ImageButton
             android:id="@+id/imageButton3"
-            android:layout_width="43dp"
-            android:layout_height="37dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="103dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="30dp"
             android:onClick="ClickCreate"
-            tools:srcCompat="@drawable/ic_add" />
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_add"
+             />
 
         <TextView
             android:id="@+id/textView23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="97dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginLeft="104dp"
+            android:layout_marginTop="70dp"
             android:layout_marginBottom="5dp"
             android:text="Добавить"
             android:textColor="@color/black"
@@ -198,19 +209,20 @@
 
         <ImageButton
             android:id="@+id/imageButton4"
-            android:layout_width="43dp"
-            android:layout_height="37dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="176dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="30dp"
-            tools:srcCompat="@drawable/ic_favourite" />
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_favourite" />
 
         <TextView
             android:id="@+id/textView24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="165dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginLeft="175dp"
+            android:layout_marginTop="70dp"
             android:layout_marginBottom="5dp"
             android:text="Избранное"
             android:textColor="@color/black"

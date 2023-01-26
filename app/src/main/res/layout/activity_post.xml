@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="434dp"
-        android:layout_height="111dp"
+        android:layout_height="90dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,45 +23,52 @@
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:contentDescription="petsButton"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_cat_footprint" />
 
         <ImageButton
             android:id="@+id/lostButton"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:onClick="ClickLost"
             app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintStart_toEndOf="@+id/petsButton"
-            app:srcCompat="@drawable/ic_lostfoot" />
+            app:srcCompat="@drawable/ic_lostfoot"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <ImageButton
             android:id="@+id/mapButton"
-            tools:ignore="SpeakableTextPresentCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:onClick="ClickMap"
             app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintEnd_toStartOf="@+id/profileButton"
-            app:srcCompat="@drawable/ic_map" />
+            app:srcCompat="@drawable/ic_map"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/profileButton"
-            tools:ignore="SpeakableTextPresentCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_profile" />
+            app:srcCompat="@drawable/ic_profile"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView"
@@ -108,8 +115,8 @@
 
     <ImageView
         android:id="@+id/postImage"
-        android:layout_width="409dp"
-        android:layout_height="257dp"
+        android:layout_width="414dp"
+        android:layout_height="255dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -120,8 +127,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="428dp"
-        android:layout_height="364dp"
+        android:layout_width="432dp"
+        android:layout_height="343dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
@@ -130,20 +137,20 @@
 
         <TextView
             android:id="@+id/postTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_width="392dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:text="Пропал кот, Москва"
             android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="17dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.114"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.032" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/postText"
@@ -164,12 +171,16 @@
             android:id="@+id/button"
             android:layout_width="350dp"
             android:layout_height="37dp"
+            android:layout_marginTop="14dp"
             android:layout_marginBottom="172dp"
+            android:backgroundTint="@color/purple_500"
             android:text="ПОКАЗАТЬ НОМЕР"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.451"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/postText"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
@@ -177,6 +188,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="39dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="218dp"
             android:layout_marginBottom="159dp"
             android:text="Поделитесь объявлением"
@@ -185,23 +197,27 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.227" />
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_marginStart="39dp"
             android:layout_marginTop="4dp"
+            android:backgroundTint="#F4F4F4"
+            android:src="@drawable/ic_vk_logo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <ImageButton
             android:id="@+id/imageButton3"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
+            android:backgroundTint="#F4F4F4"
+            android:src="@drawable/ic_twitter_logo"
             app:layout_constraintEnd_toStartOf="@+id/imageButton10"
             app:layout_constraintStart_toEndOf="@+id/imageButton"
             app:layout_constraintTop_toBottomOf="@+id/textView9"
@@ -209,132 +225,80 @@
 
         <ImageButton
             android:id="@+id/imageButton10"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="52dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
-            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            android:backgroundTint="#F4F4F4"
+            android:src="@drawable/ic_ok_logo"
+            app:layout_constraintStart_toEndOf="@+id/imageButton3"
             app:layout_constraintTop_toBottomOf="@+id/textView9"
             tools:srcCompat="@tools:sample/avatars" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="39dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:text="Номер объявления"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/textView11"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="39dp"
-            android:layout_marginBottom="4dp"
-            android:text="Порода"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/textView12"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="39dp"
+            android:layout_marginStart="36dp"
             android:layout_marginBottom="4dp"
-            android:textColor="@color/black"
             android:text="Пол"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/textView13"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="39dp"
+            android:layout_marginStart="36dp"
             android:layout_marginBottom="4dp"
-            android:textColor="@color/black"
             android:text="Дата объявления"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/textView14"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="39dp"
-            android:layout_marginTop="4dp"
-            android:textColor="@color/black"
+            android:layout_marginStart="36dp"
+            android:layout_marginBottom="18dp"
             android:text="Дата пропажи"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-        <TextView
-            android:id="@+id/postNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="139dp"
-            android:layout_marginTop="52dp"
-            android:layout_marginBottom="4dp"
-            android:text="85637858"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/postBreed"
-            app:layout_constraintStart_toEndOf="@+id/textView10"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
-
-        <TextView
-            android:id="@+id/postBreed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="216dp"
-            android:layout_marginTop="4dp"
-            android:text="-"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@+id/textView11"
-            app:layout_constraintTop_toBottomOf="@+id/postNumber" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/postGender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="240dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginEnd="62dp"
+            android:layout_marginBottom="4dp"
             android:text="Мужской"
             android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@+id/textView12"
-            app:layout_constraintTop_toBottomOf="@+id/postBreed" />
+            app:layout_constraintBottom_toTopOf="@+id/postDate"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/postDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="150dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="4dp"
             android:text="09.11.2022"
             android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@+id/textView13"
-            app:layout_constraintTop_toBottomOf="@+id/postGender" />
+            app:layout_constraintBottom_toTopOf="@+id/postDateL"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/postDateL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="172dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginEnd="52dp"
             android:layout_marginBottom="18dp"
             android:text="09.11.2022"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView14"
-            app:layout_constraintTop_toBottomOf="@+id/postDate"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

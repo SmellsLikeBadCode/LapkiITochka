@@ -11,11 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="8dp"
         android:text="Укажите место"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintTop_toBottomOf="@+id/textDate" />
 
     <TextView
         android:id="@+id/textView44"
@@ -23,7 +22,7 @@
         android:layout_height="35dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="20dp"
-        android:text="Укажите дату и место, где вы нашли питомца"
+        android:text="Укажите дату и место, где вы нашли или потеряли питомца"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView43" />
@@ -34,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="20dp"
-        android:text="Где нашли?"
+        android:text="Где нашли/потеряли?"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView37" />
@@ -56,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="24dp"
-        android:text="Нашел питомца"
+        android:text="Нашел/потерял питомца"
         android:textColor="@color/black"
         android:textSize="24dp"
         android:textStyle="bold"
@@ -65,36 +64,34 @@
 
     <Button
         android:id="@+id/button12"
-        android:layout_width="300dp"
+        android:layout_width="160dp"
         android:layout_height="42dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="#F4F4F4"
+        android:onClick="ClickBack"
         android:text="Назад"
         android:textColor="@color/purple_500"
-        android:onClick="ClickBack"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="300dp"
+        android:layout_width="160dp"
         android:layout_height="42dp"
-        android:layout_marginBottom="52dp"
-        android:text="Далее"
-        android:onClick="Click3To4"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="@color/purple_500"
+        android:onClick="Click3To4"
+        android:text="Далее"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,7 +101,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="434dp"
-        android:layout_height="111dp"
+        android:layout_height="90dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,8 +115,10 @@
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:contentDescription="petsButton"
             android:onClick="ClickPets"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_cat_footprint" />
@@ -130,6 +129,8 @@
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
+            android:onClick="ClickLost"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/petsButton"
             app:srcCompat="@drawable/ic_lostfoot"
@@ -141,7 +142,9 @@
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:onClick="ClickMap"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/profileButton"
             app:srcCompat="@drawable/ic_map"
@@ -153,6 +156,7 @@
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:onClick="ClickProfile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -205,30 +209,40 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="300dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="4dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="дд/мм/гг"
-        android:textSize="14dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView45" />
-
-    <EditText
-        android:id="@+id/editTextTextPostalAddress"
+        android:id="@+id/editAddress"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPostalAddress"
-        android:text="г.Екатеринбург, ул. Малышева 30"
+        android:hint="г.Екатеринбург, ул. Малышева 30"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView46" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="160dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="25dp"
+        android:onClick="setDate"
+        android:text="Дата"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView45" />
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="156dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="12dp"
+        android:text="Установите дату"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView45" />
 </androidx.constraintlayout.widget.ConstraintLayout>

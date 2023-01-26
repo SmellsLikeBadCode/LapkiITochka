@@ -17,7 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="434dp"
-        android:layout_height="111dp"
+        android:layout_height="90dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,8 +31,10 @@
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:contentDescription="petsButton"
             android:onClick="ClickPets"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_cat_footprint" />
@@ -43,7 +45,9 @@
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:onClick="ClickLost"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/petsButton"
             app:srcCompat="@drawable/ic_lostfoot" />
@@ -54,6 +58,8 @@
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/profileButton"
             app:srcCompat="@drawable/ic_map" />
@@ -64,7 +70,9 @@
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:onClick="ClickProfile"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_profile" />
@@ -97,8 +105,8 @@
             android:layout_height="18dp"
             android:layout_marginEnd="46dp"
             android:layout_marginBottom="20dp"
-            android:textColor="#584CF3"
             android:text="Карта"
+            android:textColor="#584CF3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView4" />
 

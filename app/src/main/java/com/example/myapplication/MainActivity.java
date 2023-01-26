@@ -6,9 +6,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +27,6 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView postRecycler;
-    PostAdapter postAdapter;
     MainAdapter mainAdapter;
 
 
@@ -37,16 +40,6 @@ public class MainActivity extends AppCompatActivity {
         postRecycler = findViewById(R.id.postRecycler);
         postRecycler.setLayoutManager(layoutManager);
         getAllPosts();
-
-
-
-
-        /*List<Post> postList = new ArrayList<>();
-        postList.add(new Post('1', "cat1", "Кеша, вредный и наглый", "Екатеринбург, ул. Коминтерна", "В добрые руки", "text", "number", "breed", "gender", "date", "dateL"));
-        postList.add(new Post('2', "cat2", "Гоша, ласковый и милый", "Москва, ул. Первомайская", "В добрые руки", "text", "number", "breed", "gender", "date", "dateL"));
-        postList.add(new Post('3', "cat3", "Изя, интересный и красивый", "Челябинск, ул. Ленина", "5000 рублей", "text", "number", "breed", "gender", "date", "dateL"));
-        postList.add(new Post('4', "cat4", "Вова, хороший и пушистый", "Санкт-Петербург, ул. Сталина", "10000 рублей", "text", "number", "breed", "gender", "date", "dateL"));
-        setPostRecycler(postList);*/
     }
 
     public void getAllPosts(){
@@ -55,13 +48,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<UserResponse>> call, Response<List<UserResponse>> response ) {
                 if (response.isSuccessful()){
-                    //List<UserResponse> userResponses = new ArrayList<>();
-                    List<UserResponse> userResponses = response.body();
+                    List<UserResponse> userResponses = new ArrayList<>();
+                    int postCount = response.body().size();
                     mainAdapter = new MainAdapter(this, userResponses);
-                    /*for (int i = 0; i < response.body().size(); i++)
+                    for (int i = 0; i < postCount; i++)
                     {
-                        userResponses.add(i, response.body().get(i));
-                    }*/
+                        if (!response.body().get(i).isLost()){
+                            userResponses.add(response.body().get(i));
+                        }
+                        continue;
+                    }
                     mainAdapter.setData(userResponses);
                     postRecycler.setAdapter(mainAdapter);
                 }

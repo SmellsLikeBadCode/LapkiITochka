@@ -1,10 +1,12 @@
 package com.example.myapplication;
 
-public class UserResponse {
+import java.io.Serializable;
 
-    private int id;
+public class UserResponse implements Serializable {
+
+    private long id;
     private String address;
-    private String animalType;
+    private String animal;
     private String date;
     private String gender;
     private String name;
@@ -14,8 +16,12 @@ public class UserResponse {
     private float geoLat;
     private float geoLon;
     private boolean lost;
+    private String tel;
+    private String email;
 
-    public int getId() {
+
+
+    public long getId() {
         return id;
     }
 
@@ -31,12 +37,12 @@ public class UserResponse {
         this.address = address;
     }
 
-    public String getAnimalType() {
-        return animalType;
+    public String getAnimal() {
+        return animal;
     }
 
-    public void setAnimalType(String animalType) {
-        this.animalType = animalType;
+    public void setAnimal(String animal) {
+        this.animal = animal;
     }
 
     public String getDate() {
@@ -103,12 +109,32 @@ public class UserResponse {
         this.geoLon = geoLon;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return "UserResponse{" +
                 "id=" + id +
                 ", address='" + address + '\'' +
-                ", animalType='" + animalType + '\'' +
+                ", animalType='" + animal + '\'' +
                 ", date='" + date + '\'' +
                 ", gender='" + gender + '\'' +
                 ", name='" + name + '\'' +
@@ -120,4 +146,5 @@ public class UserResponse {
                 ", lost=" + lost +
                 '}';
     }
+
 }

@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="434dp"
-        android:layout_height="111dp"
+        android:layout_height="90dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,6 +23,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:contentDescription="petsButton"
             android:onClick="ClickPets"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -31,38 +32,44 @@
 
         <ImageButton
             android:id="@+id/lostButton"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
+            android:onClick="ClickLost"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/petsButton"
-            app:srcCompat="@drawable/ic_lostfoot" />
+            app:srcCompat="@drawable/ic_lostfoot"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <ImageButton
             android:id="@+id/mapButton"
-            tools:ignore="SpeakableTextPresentCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:onClick="ClickMap"
             app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintEnd_toStartOf="@+id/profileButton"
-            app:srcCompat="@drawable/ic_map" />
+            app:srcCompat="@drawable/ic_map"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/profileButton"
-            tools:ignore="SpeakableTextPresentCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:onClick="ClickProfile"
             app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_profile" />
+            app:srcCompat="@drawable/ic_profile"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView"
@@ -111,8 +118,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,7 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="24dp"
-        android:text="Нашел питомца"
+        android:text="Нашел/потерял питомца"
         android:textColor="@color/black"
         android:textSize="24dp"
         android:textStyle="bold"
@@ -138,7 +145,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="16dp"
-        android:text="Кого нашли?"
+        android:text="Кого нашли/потеряли?"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView30" />
@@ -149,7 +156,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="4dp"
-        android:text="Укажите вид и пол найденного питомца"
+        android:text="Укажите вид и пол питомца"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView31" />
@@ -159,11 +166,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:text="Вид"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupLost" />
 
     <TextView
         android:id="@+id/textView34"
@@ -172,27 +179,53 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:text="Пол"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupType" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/radioGroupLost"
         android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11">
+
+        <RadioButton
+            android:id="@+id/radioButtonLost"
+            android:layout_width="145dp"
+            android:layout_height="52dp"
+            android:text="Потеряли" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFound"
+            android:layout_width="145dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="10dp"
+            android:text="Нашли" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroupType"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView33">
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/radioButtonCat"
             android:layout_width="145dp"
             android:layout_height="52dp"
             android:text="Кошка" />
 
         <RadioButton
-            android:id="@+id/radioButton6"
+            android:id="@+id/radioButtonDog"
             android:layout_width="145dp"
             android:layout_height="52dp"
             android:layout_marginLeft="10dp"
@@ -200,8 +233,9 @@
     </RadioGroup>
 
     <RadioGroup
+        android:id="@+id/radioGroupGender"
         android:layout_width="300dp"
-        android:layout_height="52dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -209,13 +243,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView34">
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/radioButtonBoy"
             android:layout_width="145dp"
             android:layout_height="52dp"
             android:text="Мальчик" />
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/radioButtonGirl"
             android:layout_width="145dp"
             android:layout_height="52dp"
             android:layout_marginLeft="10dp"
@@ -224,16 +258,26 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="300dp"
+        android:layout_width="160dp"
         android:layout_height="42dp"
-        android:layout_marginBottom="52dp"
-        android:text="Далее"
-        android:onClick="Click1To2"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="@color/purple_500"
+        android:onClick="Click1To2"
+        android:text="Далее"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="4dp"
+        android:text="Нашли или потеряли?"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

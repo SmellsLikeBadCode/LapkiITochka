@@ -8,13 +8,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.icu.lang.UCharacter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import adapter.LostAdapter;
+import adapter.MainAdapter;
 import model.Lost;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class lostActivity extends AppCompatActivity {
 
@@ -28,14 +33,43 @@ public class lostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lost);
 
-        List<Lost> lostList = new ArrayList<>();
-        lostList.add(new Lost('1', "cat1", "Потерялся кот неизвестной породы, на вид полосатый и довольно глупый, просьба верну...", "Екатеринбург, ул. Луначарского 51", "text", "number", "breed", "gender", "date", "dateL"));
-        lostList.add(new Lost('2', "cat2", "Потерялась кошка породы саванна, окликается на кличку Паприка, последний раз видели...", "Екатеринбург, ул. Азина, 20к2", "text", "number", "breed", "gender", "date", "dateL"));
-        lostList.add(new Lost('3', "cat3", "Потерялся серый кот Сажа, очень опасен и агресивен, просьба вернуть по следующему а...", "Екатеринбург, ул. Испанских рабочих, 35", "text",  "number", "breed", "gender", "date", "dateL"));
-        setLostRecycler(lostList);
+        lostRecycler = findViewById(R.id.lostRecycler);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+        lostRecycler.setLayoutManager(layoutManager);
+        lostRecycler.addItemDecoration(new DividerItemDecoration(lostRecycler.getContext(), DividerItemDecoration.VERTICAL));
+        //setLostRecycler(lostList);
+        getAllPosts();
     }
 
-    private void setLostRecycler(List<Lost> lostList) {
+    public void getAllPosts(){
+        Call<List<UserResponse>> userList = ApiClient.getUserService().getAllUsers();
+        userList.enqueue(new Callback<List<UserResponse>>() {
+            @Override
+            public void onResponse(Call<List<UserResponse>> call, Response<List<UserResponse>> response ) {
+                if (response.isSuccessful()){
+                    List<UserResponse> userResponses = new ArrayList<>();
+
+                    lostAdapter = new LostAdapter(this, userResponses);
+                    for (int i = 0; i < response.body().size(); i++)
+                    {
+                        if (response.body().get(i).isLost()){
+                            userResponses.add(response.body().get(i));
+                        }
+                        continue;
+                    }
+                    lostAdapter.setData(userResponses);
+                    lostRecycler.setAdapter(lostAdapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<UserResponse>> call, Throwable t) {
+                Log.e("failure", t.getLocalizedMessage());
+            }
+        });
+    }
+
+    /*private void setLostRecycler(List<Lost> lostList) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
 
         lostRecycler = findViewById(R.id.lostRecycler);
@@ -44,7 +78,7 @@ public class lostActivity extends AppCompatActivity {
         lostRecycler.setAdapter(lostAdapter);
 
         lostRecycler.addItemDecoration(new DividerItemDecoration(lostRecycler.getContext(), DividerItemDecoration.VERTICAL));
-    }
+    }*/
 
     public void ClickPets(View view) {
         Intent intent = new Intent(lostActivity.this, MainActivity.class);

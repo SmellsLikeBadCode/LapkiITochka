@@ -25,7 +25,7 @@
         android:text="Номер телефона"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
 
     <TextView
         android:id="@+id/textView52"
@@ -36,7 +36,7 @@
         android:text="E-mail"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone2" />
+        app:layout_constraintTop_toBottomOf="@+id/editPhone" />
 
     <TextView
         android:id="@+id/textView49"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="24dp"
-        android:text="Нашел питомца"
+        android:text="Нашел/потерял питомца"
         android:textColor="@color/black"
         android:textSize="24dp"
         android:textStyle="bold"
@@ -64,36 +64,34 @@
 
     <Button
         android:id="@+id/button11"
-        android:layout_width="300dp"
+        android:layout_width="160dp"
         android:layout_height="42dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="#F4F4F4"
+        android:onClick="ClickBack"
         android:text="Назад"
         android:textColor="@color/purple_500"
-        android:onClick="ClickBack"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button7"
-        android:layout_width="300dp"
+        android:id="@+id/buttonPost"
+        android:layout_width="160dp"
         android:layout_height="42dp"
-        android:layout_marginBottom="52dp"
-        android:text="Опубликовать объявление"
-        android:onClick="Click5To6"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="@color/purple_500"
+        android:onClick="Click5To6"
+        android:text="Опубликовать"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,7 +101,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="434dp"
-        android:layout_height="111dp"
+        android:layout_height="90dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,46 +115,54 @@
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:contentDescription="petsButton"
             android:onClick="ClickPets"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_cat_footprint" />
 
         <ImageButton
             android:id="@+id/lostButton"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
+            android:onClick="ClickLost"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/petsButton"
-            app:srcCompat="@drawable/ic_lostfoot" />
+            app:srcCompat="@drawable/ic_lostfoot"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <ImageButton
             android:id="@+id/mapButton"
-            tools:ignore="SpeakableTextPresentCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:onClick="ClickMap"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/profileButton"
-            app:srcCompat="@drawable/ic_map" />
+            app:srcCompat="@drawable/ic_map"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/profileButton"
-            tools:ignore="SpeakableTextPresentCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+
+            android:backgroundTint="@color/white"
             android:onClick="ClickProfile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_profile" />
+            app:srcCompat="@drawable/ic_profile"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView"
@@ -204,13 +210,13 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/editName"
         android:layout_width="300dp"
         android:layout_height="42dp"
         android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Ваше имя"
+        android:hint="Ваше имя"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -218,12 +224,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView50" />
 
     <EditText
-        android:id="@+id/editTextPhone2"
+        android:id="@+id/editPhone"
         android:layout_width="300dp"
         android:layout_height="42dp"
         android:ems="10"
         android:inputType="phone"
-        android:text="+7XXXXXXXXXX"
+        android:hint="+7XXXXXXXXXX"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -231,13 +237,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView51" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/editMail"
         android:layout_width="300dp"
         android:layout_height="42dp"
         android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="example@email.com"
+        android:hint="example@email.com"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"

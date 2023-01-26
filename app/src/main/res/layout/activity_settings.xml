@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="434dp"
-        android:layout_height="111dp"
+        android:layout_height="90dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,46 +24,54 @@
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:contentDescription="petsButton"
             android:onClick="ClickPets"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_cat_footprint" />
 
         <ImageButton
             android:id="@+id/lostButton"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:onClick="ClickLost"
             app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintStart_toEndOf="@+id/petsButton"
-            app:srcCompat="@drawable/ic_lostfoot" />
+            app:srcCompat="@drawable/ic_lostfoot"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <ImageButton
             android:id="@+id/mapButton"
-            tools:ignore="SpeakableTextPresentCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
             android:onClick="ClickMap"
             app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintEnd_toStartOf="@+id/profileButton"
-            app:srcCompat="@drawable/ic_map" />
+            app:srcCompat="@drawable/ic_map"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/profileButton"
-            tools:ignore="SpeakableTextPresentCheck"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/white"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_profile" />
+            app:srcCompat="@drawable/ic_profile"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView"
@@ -114,10 +122,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:text="Настройки"
-        android:textSize="24dp"
         android:textColor="@color/black"
+        android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
